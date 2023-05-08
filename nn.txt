@@ -1,0 +1,43 @@
+Aggregession java
+
+
+Aggregation in Java is a type of relationship between two classes where one class has a reference to another class, but the second class can exist independently of the first class. In other words, one class "owns" the other, but the owned object can exist on its own.
+
+In Java, aggregation is implemented using instance variables of one class that refer to objects of another class. The class that has the instance variable is the "owning" class and the class referred to by the instance variable is the "owned" class.
+
+Here is an example of aggregation in Java:
+
+csharp
+Copy code
+public class Car {
+    private Engine engine;
+    private List<Wheel> wheels;
+    
+    public Car() {
+        this.engine = new Engine();
+        this.wheels = new ArrayList<Wheel>();
+        for (int i = 0; i < 4; i++) {
+            wheels.add(new Wheel());
+        }
+    }
+    
+    // Other methods and fields...
+}
+
+public class Engine {
+    // Engine class implementation...
+}
+
+public class Wheel {
+    // Wheel class implementation...
+}
+In this example, the Car class is the "owning" class and has instance variables for an Engine object and a list of Wheel objects. The Engine and Wheel classes are the "owned" classes.
+
+The Car class creates new instances of the Engine and Wheel classes in its constructor and stores them in its instance variables. The Engine and Wheel objects can exist independently of the Car object.
+
+Aggregation is a powerful tool for building complex objects by combining simpler objects or components. It allows developers to build flexible and modular systems, where the components can be reused in different contexts and can be easily replaced without affecting the containing object.
+
+
+
+
+
